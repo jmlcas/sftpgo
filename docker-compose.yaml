@@ -3,7 +3,7 @@ version: '3.3'
 services:
 
     sftpgo:
-        image: drakkan/sftpgo:2.5.x-alpine
+        image: drakkan/sftpgo:v2.5
         container_name: some-sftpgo
         ports:
             - '8080:8080'
@@ -14,9 +14,10 @@ services:
         environment:
             - SFTPGO_HTTPD_BINDINGS_0_PORT=8080
             - SFTPGO_HTTPD_BINDINGS_0_ADDRESS=0.0.0.0
-            - SFTPGO_DATA_PROVIDER_CREATE_DEFAULT_ADMIN="true"
+            - SFTPGO_DATA_PROVIDER_CREATE_DEFAULT_ADMIN=true
             - SFTPGO_DEFAULT_ADMIN_USERNAME=User
             - SFTPGO_DEFAULT_ADMIN_PASSWORD=p4ssw0rd
+            - SFTPGO_SERVICE_SERVICE_PORT_ADMIN_UI=8080
             - SFTPGO_WEBDAVD_BINDINGS_0_PORT=10080
             - SFTPGO_FTPD_BINDINGS_0_PORT=2121
             - SFTPGO_FTPD_BINDINGS_0_FORCE_PASSIVE_IP='127.0.0.1:8080'
