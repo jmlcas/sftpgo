@@ -8,6 +8,9 @@ services:
             - '2022:2022'
             - '2121:2121'
             - '10080:10080'
+        volumes: 
+          - ./sftpgodata:/srv/sftpgo
+          - ./sftpgohome:/var/lib/sftpgo
         environment:
             - SFTPGO_HTTPD_BINDINGS_0_PORT=8080
             - SFTPGO_HTTPD_BINDINGS_0_ADDRESS=0.0.0.0
