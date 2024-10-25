@@ -1,7 +1,7 @@
 services:
 
     sftpgo:
-        image: drakkan/sftpgo:v2.6
+        image: drakkan/sftpgo:latest
         container_name: some-sftpgo
         ports:
             - '8080:8080'
